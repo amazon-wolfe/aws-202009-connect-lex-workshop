@@ -14,8 +14,8 @@ PW = boto3.client('kms').decrypt(
 
 def lambda_handler(event, context):
     
-    slotUserID = event["currentIntent"]["slots"]["UserID"]
-    RESET_USER=slotUserID+"@corp.example.com"
+    slotUserID = event["Details"]["Parameters"]["UserID"]
+    RESET_USER=slotUserID
     SEARCHFILTER='(&(userPrincipalName='+RESET_USER+')(objectClass=person))'
 
     USER_DN=""
