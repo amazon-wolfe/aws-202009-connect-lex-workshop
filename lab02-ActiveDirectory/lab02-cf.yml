@@ -298,6 +298,12 @@ Resources:
           Action: kms:*
           Resource: '*'
 
+  KMSAlias:
+    Type: AWS::KMS::Alias
+    Properties: 
+      AliasName: alias/awshd-lambda-resetpw
+      TargetKeyId: !Ref LambdaKMSKey
+
   Cloud9Instance:
     Type: AWS::Cloud9::EnvironmentEC2
     Properties: 
