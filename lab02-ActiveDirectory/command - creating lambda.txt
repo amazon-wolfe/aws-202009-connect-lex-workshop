@@ -1,0 +1,7 @@
+# Creating function first time
+aws lambda create-function --function-name reset_function --region us-east-1 --zip-file fileb://~/environment/resetpw.zip --role {<ROLE_ARN>} --handler reset_function.lambda_handler --runtime python3.6 --timeout 30 --vpc-config SubnetIds=<SUBNET_ID>,SecurityGroupIds=<SG_ID> --memory-size 128
+
+# Updating code subsequently
+aws lambda update-function-code --function-name reset_function --region us-east-1 --zip-file fileb://~/environment/resetpw.zip
+
+
