@@ -344,10 +344,6 @@ Outputs:
   NoIngressSecurityGroup:
     Description: Security group with no ingress rule
     Value: !Ref NoIngressSecurityGroup
-  
-  ManagedADDNS:
-    Description: The DNS endpoints of the managed active directory service
-    Value: !GetAtt ManagedAD.DnsIpAddresses
 
 
 
